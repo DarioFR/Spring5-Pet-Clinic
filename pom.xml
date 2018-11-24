@@ -48,7 +48,6 @@
 
     <scm>
         <connection>https://github.com/DarioFR/Spring5-Pet-Clinic.git</connection>
-        <url>https://github.com/DarioFR/Spring5-Pet-Clinic.git</url>
         <!--<developerConnection>scm:git:git@github.com:DarioFR/Spring5-Pet-Clinic.git</developerConnection>-->
       <tag>sfg-pet-clinic-0.0.3</tag>
   </scm>
