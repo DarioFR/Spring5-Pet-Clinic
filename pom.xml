@@ -38,17 +38,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>default</id>
-                        <goals>
-                            <goal>perform</goal>
-                        </goals>
-                        <configuration>
-                            <pomFileName>pom.xml</pomFileName>
-                        </configuration>
-                    </execution>
-                </executions>
                 <configuration>
                     <goals>
                         <goal>install</goal>
