@@ -5,7 +5,7 @@
     <parent>
         <artifactId>sfg-pet-clinic</artifactId>
         <groupId>guru.springframework</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.3-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -42,6 +42,8 @@
     </dependencies>
 
 
+    <!-- Diciamo a maven di saltare il repackage nella build, in modo che non crei un jar eseguibile, che è
+     difatti ciò che vogliamo, visto che pet-clinic-data conterrà solo dati di modello -->
     <build>
         <plugins>
             <plugin>
