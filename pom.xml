@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>guru.springframework</groupId>
@@ -18,7 +19,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.0.RELEASE</version>
-        <relativePath /> <!-- lookup parent from repository -->
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <properties>
@@ -37,17 +38,23 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
+                <!-- fissiamo il goal a install per evitare che faccia deploy degli artifatti
+                 in quanto non abbiamo un repo privato o un nexus su cui deployare i nostri artefatti, a meno
+                 che non siamo in ambiente di lavoro aziendale-->
                 <configuration>
                     <goals>install</goals>
+                    <!-- facciamo si che il plugin maven release applichi di default lo stesso versionamento
+                    anche ai sottomoduli maven interni senza che ci chieda conferma ogni volta-->
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
+    <!-- fissiamo url di connessione a github che verrà usata dal release plugin per fare checkout dei repo e lavorare
+    su essi-->
     <scm>
         <developerConnection>scm:git:git@github.com:DarioFR/Spring5-Pet-Clinic.git</developerConnection>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
 </project>
